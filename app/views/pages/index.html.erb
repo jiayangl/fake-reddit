@@ -1,0 +1,17 @@
+<h2>supreme homepage</h2>
+<% link_to 'Create link blah', new_link_path %></p>
+
+<%= simple_form_for Link.new do |f| %>
+    <%= f.input :url %>
+    <%= f.input :title%>
+    <%= f.button :submit%>
+    
+<% end %>
+
+<ul>
+<% @links.each do |link| %>
+    <li><%= link_to "#{link.title}","#{link.url}" %></li>
+    <li><%= link_to 'Show more info', link_path(link) %></li>
+    </br>
+<% end %>
+</ul>
